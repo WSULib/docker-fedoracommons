@@ -8,12 +8,12 @@ COPY install.properties /opt/install.properties
 
 RUN \
   cd /opt && \
-  wget http://downloads.sourceforge.net/fedora-commons/fcrepo-installer-3.8.0.jar && \
+  wget http://downloads.sourceforge.net/fedora-commons/fcrepo-installer-3.4.2.jar && \
   wget http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.35.tar.gz && \
   tar xvzf mysql-connector-java-5.1.35.tar.gz && \
-  java -jar fcrepo-installer-3.8.0.jar install.properties && \
+  java -jar fcrepo-installer-3.4.2.jar install.properties && \
   rm -f mysql-connector-java-5.1.35.tar.gz && \
-  rm -f fcrepo-installer-3.8.0.jar
+  rm -f fcrepo-installer-3.4.2.jar
 
 COPY fedora_run.sh /opt/fedora_run.sh
 RUN chmod +x /opt/fedora_run.sh
